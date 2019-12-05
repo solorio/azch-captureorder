@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: solorioazchcaptureorder 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: solorioazchcaptureorder 
+    spec:
+      containers:
+        - name: solorioazchcaptureorder 
+          image: soloacr.azurecr.io/solorioazchcaptureorder
+          ports:
+          - containerPort: 8080
