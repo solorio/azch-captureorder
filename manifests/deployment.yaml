@@ -14,7 +14,7 @@ spec:
       spec:
         containers:
         - name: captureorder
-          image: uniqueacrname.azurecr.io/captureorder:placeholdertag # replace with your own repository. Due to a bug, leave the :placeholdertag tag in there to allow the pipeline to replace it
+          image: soloacr.azurecr.io/captureorder:ca1 # replace with your own repository. Due to a bug, leave the :placeholdertag tag in there to allow the pipeline to replace it
           imagePullPolicy: Always
           readinessProbe:
             httpGet:
@@ -33,7 +33,7 @@ spec:
               cpu: "500m"
           env:
           - name: TEAMNAME
-            value: 'team-azch' # will be patched at deployment time by value of 'teamName' in the variable group
+            value: 'team-solo' # will be patched at deployment time by value of 'teamName' in the variable group
           - name: MONGOHOST
             valueFrom:
               secretKeyRef:
